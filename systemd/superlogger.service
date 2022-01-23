@@ -1,0 +1,13 @@
+[Unit]
+Description=SystemD Test Service!
+After=network.target
+
+[Service]
+User=chambers
+Group=chambers
+EnvironmentFile=/etc/default/superlogger
+WorkingDirectory=/home/my_user/my_project/systemd-templates
+ExecStart=/usr/bin/python3 -u app.py
+
+[Install]
+WantedBy=multi-user.target
